@@ -7,7 +7,7 @@
             >
                 <DefaultInputField
                     type="text" 
-                    placeholder="Qual tarefa deseja iniciar?"
+                    placeholder="Ex: React"
                     :modelValue="taskValue"
                     @change="$emit('onChangeTaskVal', $event)"
                 />
@@ -36,11 +36,11 @@ export default defineComponent({
     },
     emits: ['onChangeTaskVal'],
     props: {
-        taskValue: String,
-        timer: Number,
-        timeStamp: String, 
-        onInit: Function,
-        onFinish: Function,
+        taskValue: { type: String, required: true },
+        timer: { type: Number, required: true },
+        timeStamp:{ type: String, required: true }, 
+        onInit: { type: Function, required: true },
+        onFinish: { type: Function, required: true },
     },
     setup(props) {
         props.taskValue,

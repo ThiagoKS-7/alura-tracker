@@ -1,11 +1,14 @@
 <template>
-    <input 
-        class="input" 
-        :type="type" 
-        :placeholder="placeholder"
-        :value="modelValue"
-        @input="$emit('change', $event.target.value)"
-    >
+    <div>
+
+        <input 
+            :class="class" 
+            :type="type" 
+            :placeholder="placeholder"
+            :value="modelValue"
+            @input="$event=> updateModelValue($event)"
+        >
+    </div>
 </template>
 
 <script lang='ts'>
@@ -15,14 +18,23 @@ export default defineComponent({
     name: 'DefaultInputField',
     emits: ['change'],
     props: {
-        type: String,
-        placeholder: String,
-        modelValue: String,
+        type: { type: String, required: true },
+        placeholder: { type: String, required: true },
+        modelValue: { type: String, required: true },
+        class: {
+            type: String,
+            default: "input is-normal is-info"
+        }
     },
     setup(props) {
         props.type,
         props.placeholder
     },
+    methods: {
+        updateModelValue(evt:any) : void {
+            if(evt.target) this.$emit('change', evt.target.value);
+        }   
+    }
 });
 </script>
 

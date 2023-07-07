@@ -3,13 +3,22 @@
 }
 .panel-item { 
     font-size: 1.5rem;
+    position: relative;
+}
+.time-spent {
+    position: absolute;
+    right: 2rem;
 }
 .panel-item .panel-icon {
     font-size: 1.5rem;
     color: #7a7a7a;
+    position: absolute;
+    left: 2rem;
 }
 
 .panel-item:hover .panel-icon  {
     font-size: 1.5rem;
     color: #3e8ed0;
+    position: absolute;
+    left: 2rem;
 }

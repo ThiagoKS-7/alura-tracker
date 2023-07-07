@@ -8,19 +8,17 @@
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>
-            <div class="columns">
-                <span class="column is-7">
-                    <strong class="mx-3">{{item.name}}</strong>  - 
-                </span>
-                <span class="column mx-3">
-                    <i class="fas fa-clock" aria-hidden="true"></i>
-                    {{item.timeSpent}}
-                </span>
-            </div>
+            <span  class="mx-3">
+                <strong>{{item.name}}</strong>
+            </span>
+            <span class="time-spent">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                {{item.timeSpent}}
+            </span>
         </a>
     </template>
     <template v-else>
-        <a class="panel-block is-flex is-justify-content-center">
+        <a class="panel-block panel-item is-flex is-justify-content-center">
             <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
             </span>
@@ -42,8 +40,8 @@ interface Task {
 export default defineComponent({
     name: 'DefaultPanel',
     props: {
-        title: String,
-        list:  Array as PropType<Task[]>,
+        title: { type: String, required: true },
+        list:  { type: Array as PropType<Task[]>, required: true },
     },
     setup(props) {
         props.title,
