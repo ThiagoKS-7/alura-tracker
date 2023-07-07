@@ -31,17 +31,14 @@
 <script lang='ts'>
 import { defineComponent } from 'vue';
 import { PropType } from 'vue';
+import ITask from "@/types/ITask";
 
-interface Task {
-    name: string;
-    timeSpent: string;
-}
 
 export default defineComponent({
     name: 'DefaultPanel',
     props: {
         title: { type: String, required: true },
-        list:  { type: Array as PropType<Task[]>, required: true },
+        list:  { type: Array as PropType<ITask[]>, required: true },
     },
     setup(props) {
         props.title,

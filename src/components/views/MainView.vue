@@ -27,11 +27,8 @@ import { defineComponent } from 'vue';
 import DefaultSidebar from '@/components/molecules/DefaultSidebar/DefaultSidebar.vue';
 import DefaultPanel from '@/components/organisms/DefaultPanel/DefaultPanel.vue';
 import DefaultForm from '@/components/organisms/DefaultForm/DefaultForm.vue';
+import ITask from "@/types/ITask";
 
-interface Task {
-    name: string;
-    timeSpent: string;
-}
 
 
 export default defineComponent({
@@ -48,7 +45,7 @@ export default defineComponent({
                 timer: 0,
             },
             form: {
-                taskList: [] as Task[],
+                taskList: [] as ITask[],
                 taskValue: '',
             }
         }
