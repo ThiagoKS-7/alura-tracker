@@ -1,19 +1,18 @@
 <template>
     <header>
-        <h1>
-            <img 
-                src="../assets/logo.png" 
-                alt="logo alura_tracker" 
-            />
-        </h1>
+        <BrandDefault/>
     </header>
 </template>
 
 <script lang='ts'>
 import { defineComponent } from 'vue';
+import BrandDefault from '../atoms/BrandDefault.vue'; 
 
 export default defineComponent({
-name: 'DefaultSidebar'
+    name: 'DefaultSidebar',
+    components: {
+        BrandDefault
+    }
 });
 </script>
 
