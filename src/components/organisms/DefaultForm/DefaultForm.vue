@@ -7,6 +7,7 @@
             >
                 <DefaultInputField
                     type="text" 
+                    label="Task Name"
                     placeholder="Ex: React"
                     :modelValue="taskValue"
                     @change="$emit('onChangeTaskVal', $event)"
