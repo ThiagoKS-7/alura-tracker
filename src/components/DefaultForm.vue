@@ -11,15 +11,15 @@
             <div class="column">
                 <div class="info-wrapper">
                     <section clas="timer">
-                        <string>00:00:00</string>
+                        <string>{{timeStamp}}</string>
                     </section>
-                    <button class="button action-btn">
+                    <button class="button action-btn" @click="init()">
                         <span class="icon has-text-success">
                             <i class="fas fa-play"></i>
                         </span>
                         <span>play</span>
                     </button>
-                    <button class="button action-btn">
+                    <button class="button action-btn" @click="finish()">
                         <span class="icon has-text-danger">
                             <i class="fas fa-stop"></i>
                         </span>
@@ -35,7 +35,28 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-name: 'DefaultForm'
+    name: 'DefaultForm',
+    data() {
+        return {
+            timeInSeconds: 0,
+            timer: 0,
+        }
+    },
+    computed: {
+        timeStamp() : string {
+            return new Date(this.timeInSeconds*1000).toISOString().substr(11,8);
+        },
+    },
+    methods: {
+        init() {
+            this.timer = setInterval(()=> this.timeInSeconds +=1, 1000);
+        },
+        finish() {
+            clearInterval(this.timer);
+            this.timeInSeconds = 0;
+            
+        },
+    }
 });
 </script>
 
@@ -84,4 +105,4 @@ name: 'DefaultForm'
     }
 
 }
-</style>
+</style>    
