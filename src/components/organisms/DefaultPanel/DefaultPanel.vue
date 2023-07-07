@@ -8,11 +8,15 @@
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>
-            <strong class="mx-3">{{item.name}}</strong>  - 
-            <span class="mx-3">
-                <i class="fas fa-clock" aria-hidden="true"></i>
-                {{item.timeSpent}}
-            </span>
+            <div class="columns">
+                <span class="column is-7">
+                    <strong class="mx-3">{{item.name}}</strong>  - 
+                </span>
+                <span class="column mx-3">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    {{item.timeSpent}}
+                </span>
+            </div>
         </a>
     </template>
     <template v-else>
@@ -28,6 +32,7 @@
 
 <script lang='ts'>
 import { defineComponent } from 'vue';
+import { PropType } from 'vue';
 
 interface Task {
     name: string;
@@ -38,7 +43,7 @@ export default defineComponent({
     name: 'DefaultPanel',
     props: {
         title: String,
-        list: [] as Task[]
+        list:  Array as PropType<Task[]>,
     },
     setup(props) {
         props.title,
