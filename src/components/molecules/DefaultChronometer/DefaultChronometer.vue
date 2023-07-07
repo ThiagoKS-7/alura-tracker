@@ -1,15 +1,15 @@
 <template>
     <div class="info-wrapper">
         <section clas="timer">
-            <string>{{timeStamp}}</string>
+            <strong>{{timeStamp}}</strong>
         </section>
-        <button class="button action-btn" @click="onInit">
+        <button class="button action-btn" @click="onInit" :disabled="timeStamp !== '00:00:00'">
             <span class="icon has-text-success">
                 <i class="fas fa-play"></i>
             </span>
             <span>play</span>
         </button>
-        <button class="button action-btn" @click="onFinish">
+        <button class="button action-btn" @click="onFinish" :disabled="timeStamp == '00:00:00' || !timeStamp">
             <span class="icon has-text-danger">
                 <i class="fas fa-stop"></i>
             </span>
@@ -20,7 +20,7 @@
 
 <script lang='ts'>
 import { defineComponent } from 'vue';
-import type { PropType } from 'vue'
+
 export default defineComponent({
     name: 'DefaultChronometer',
     props: {
@@ -36,5 +36,6 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
+@import "./style.css";
 </style>

@@ -1,7 +1,7 @@
 <template>
     <h1>
         <img 
-            src="../../assets/logo.png" 
+            src="@/assets/logo.png" 
             alt="logo alura_tracker" 
         />
     </h1>
@@ -15,5 +15,6 @@ name: 'BrandDefault'
 });
 </script>
 
-<style>
+<style scoped>
+@import "./style.css";
 </style>

@@ -1,0 +1,15 @@
+.panel-container {
+    width: 95%;
+}
+.panel-item { 
+    font-size: 1.5rem;
+}
+.panel-item .panel-icon {
+    font-size: 1.5rem;
+    color: #7a7a7a;
+}
+
+.panel-item:hover .panel-icon  {
+    font-size: 1.5rem;
+    color: #3e8ed0;
+}
