@@ -8,6 +8,7 @@
             v-for="(item,index) in list" 
             :key="index" 
             :name="item.name"
+            :isDark="isDark"
             :timeSpent="item.timeSpent"
         />
     </template>
@@ -33,6 +34,7 @@ export default defineComponent({
     name: "DefaultPanel",
     props: {
         title: { type: String, required: true },
+        isDark: { type: Boolean, required: true},
         list: { type: Array as PropType<ITask[]>, required: true },
     },
     setup(props) {

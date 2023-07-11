@@ -1,0 +1,13 @@
+html, body, main {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+html.dark, body.dark, main.dark, .is-three-quarter.dark {
+  background-color: var(--primary-dark-bg) !important;
+  color: var(--primary-dark-text);
+}
+
+p.dark, span.dark, strong.dark {
+  color: var(--primary-dark-text);
+}

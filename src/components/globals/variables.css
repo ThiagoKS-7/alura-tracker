@@ -1,0 +1,15 @@
+:root {
+--primary-bg: white;
+--primary-text: black;
+--danger: #F24976;
+--warning: #f2b950;
+--success: #49BF88;
+--primary-blue: #0C3559; 
+--secondary-blue: #439FD9;
+
+
+--primary-dark-text: #dddd;
+--primary-dark-bg: #313131;
+--hover-dark-bg: #202020a4;
+--secondary-dark-bg: #1f1e1e;
+}

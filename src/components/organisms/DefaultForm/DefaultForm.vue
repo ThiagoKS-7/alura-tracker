@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div id="form" class="box">
         <div class="columns">
             <form 
                 class="column is-8 input-wrapper" 
@@ -10,6 +10,7 @@
                     label="Task Name"
                     placeholder="Ex: React"
                     :modelValue="taskValue"
+                    :isDark="isDark"
                     @change="$emit('onChangeTaskVal', $event)"
                 />
             </form>
@@ -17,6 +18,7 @@
                 <DefaultChronometer
                     :timeStamp="timeStamp"
                     :onInit="onInit"
+                    :isDark="isDark"
                     :onFinish="onFinish"
                 />
             </div>
@@ -38,6 +40,7 @@ export default defineComponent({
     emits: ['onChangeTaskVal'],
     props: {
         taskValue: { type: String, required: true },
+        isDark: { type: Boolean, required: true },
         timer: { type: Number, required: true },
         timeStamp:{ type: String, required: true }, 
         onInit: { type: Function, required: true },
@@ -46,6 +49,7 @@ export default defineComponent({
     setup(props) {
         props.taskValue,
         props.timer,
+        props.isDark,
         props.timeStamp,
         props.onInit,
         props.onFinish

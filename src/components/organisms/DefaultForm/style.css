@@ -40,3 +40,24 @@
     align-items: center;
   }
 }
+
+/* DARK THEME CLASSES */
+.box.dark, 
+.input.is-info.dark, 
+.action-btn.dark {
+  background-color: var(--secondary-dark-bg);
+  color: var(--primary-dark-text);
+}
+.input.is-info.dark:hover, 
+.action-btn.dark:hover {
+  background-color: var(--hover-dark-bg);
+  color: var(--primary-dark-text);
+}
+.input.is-info.dark:focus, 
+.action-btn.dark:focus {
+  color: var(--primary-dark-text);
+}
+.input.is-info.dark:disabled, .action-btn.dark:disabled {
+  background-color: var(--hover-dark-bg) !important;
+  color: var(--primary-dark-text);
+}

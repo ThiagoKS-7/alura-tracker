@@ -7,7 +7,8 @@
             id="input"
             name="input"
             :class="{
-                'input is-info': className == 'default'
+                'input is-info': className == 'default' && isDark == false,
+                'input is-info dark': isDark == true
             }" 
             :type="type" 
             :placeholder="placeholder"
@@ -24,6 +25,7 @@ export default defineComponent({
     emits: ['change'],
     props: {
         label: { type: String },
+        isDark: { type: Boolean, required: true },
         type: { type: String, required: true },
         placeholder: { type: String, required: true },
         modelValue: { type: String, required: true },
@@ -34,6 +36,7 @@ export default defineComponent({
     },
     setup(props) {
         props.label,
+        props.isDark,
         props.className,
         props.modelValue,
         props.type,

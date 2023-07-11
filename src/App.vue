@@ -13,3 +13,8 @@ export default defineComponent({
   }
 });
 </script>
+
+<style>
+@import './components/globals/style.css';
+@import './components/globals/variables.css';
+</style>

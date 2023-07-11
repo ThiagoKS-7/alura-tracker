@@ -1,5 +1,10 @@
 <template>
-    <a class="panel-block panel-item is-flex is-justify-content-center">
+    <a :class="
+    {
+        'panel-block panel-item is-flex is-justify-content-center': isDark == false,
+        'panel-block panel-item is-flex is-justify-content-center dark': isDark == true
+    }
+    ">
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>
@@ -20,6 +25,7 @@ export default defineComponent({
     name: 'PanelItem',
     props: {
         name: { type: String, required: true },
+        isDark: { type: Boolean, required: true },
         timeSpent: { type: String, required: true },
     }
 });

@@ -1,0 +1,15 @@
+a.panel-block.panel-item.is-flex.is-justify-content-center.dark {
+    background-color: var(--secondary-dark-bg);
+    color: var(--primary-dark-text);
+}
+
+a.panel-block.panel-item.is-flex.is-justify-content-center.dark:hover {
+    background-color: var(--hover-dark-bg);
+    color: var(--primary-dark-text);
+}
+
+a.panel-block.panel-item.is-flex.is-justify-content-center.dark:focus {
+    color: var(--primary-dark-text);
+}
+
+
