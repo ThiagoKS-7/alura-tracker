@@ -62,6 +62,9 @@ export default defineComponent({
             }
         }
     },
+    mounted() {
+        const html = document.getElementById("html");
+    },
     computed: {
         timeStamp() : string {
             return new Date(this.chron.timeInSeconds*1000).toISOString().substr(11,8);
@@ -77,6 +80,7 @@ export default defineComponent({
             this.chron.timeInSeconds = 0;
         },
         updateChecked() {
+            const html = document.getElementById("html");
             const body = document.body;
             const panelItems =  document.querySelectorAll<HTMLElement>('.panel-item');
             const content =  document.querySelectorAll<HTMLElement>('.is-three-quarter');
@@ -84,6 +88,7 @@ export default defineComponent({
             const inputs =  document.querySelectorAll<HTMLElement>('input');
             const buttons = document.querySelectorAll<HTMLElement>('.action-btn');
             const elements = [
+                html,
                 body,
                 content,
                 panelItems,
@@ -98,7 +103,9 @@ export default defineComponent({
                         item.classList.toggle("dark")
                     });
                 } else {
-                    el.classList.toggle("dark")
+                    if(el?.classList) {
+                        el.classList.toggle("dark")
+                    }
                 }
             })
         }
