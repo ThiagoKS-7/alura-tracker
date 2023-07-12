@@ -1,56 +1,63 @@
-.theme-switch__input:checked ~ .theme-switch__label {
-    background-color: lightSlateGray;
-}
-.theme-switch__input,
-.theme-switch__label {
-  position: absolute;
-  z-index: 1;
-}
 .theme-switch__input {
   opacity: 0;
 }
-.theme-switch__input:hover + .theme-switch__label, .theme-switch__input:focus + .theme-switch__label {
-  background-color: lightSlateGray;
-}
-.theme-switch__input:hover + .theme-switch__label span::after, .theme-switch__input:focus + .theme-switch__label span::after {
-  background-color: #d4ebf2;
-}
-.theme-switch__label {
-  margin: 60px;
-  transition: background-color 200ms ease-in-out;
-  text-align: center;
-}
-.theme-switch__label span {
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-.theme-switch__label::before, .theme-switch__label::after {
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-}
-.theme-switch__label::before {
-  content: "☼";
-  right: 100%;
-  margin-right: 10px;
+
+.sun-icon {
+  display: unset;
   color: orange;
+  margin: 0.5em;
+  font-size: 2em;
 }
-.theme-switch__label::after {
-  content: "☾";
-  right: 100%;
-  margin-right: 20px;
-  color: lightSlateGray;
-  display: none;
+.sun-icon:hover {
+  display: unset;
+  color: #926003;
+  cursor: pointer;
+  font-size: 2em;
 }
-.theme-switch__input:checked ~ .theme-switch__label span::after {
-  transform: translate3d(70px, 0, 0);
-}
-.theme-switch__input:checked ~ .theme-switch__label::before {
-  color: lightSlateGray;
-  display: none;
-}
-.theme-switch__input:checked ~ .theme-switch__label::after {
+
+.moon-icon {
+  font-size: 2em;
+  margin: 0.5em;
+  width: 60px;
   color: turquoise;
   display: unset;
+}
+
+.moon-icon:hover  {
+  font-size: 2em;
+  margin: 0.5em;
+  width: 60px;
+  cursor: pointer;
+  color: #088578;
+  display: unset;
+}
+
+@media only screen and (max-width: 768px) { 
+  .sun-icon {
+    display: unset;
+    color: orange;
+    margin: 0.5em;
+    font-size: 0.7em;
+  }
+  .sun-icon:hover {
+    display: unset;
+    color: #926003;
+    cursor: pointer;
+    font-size: 0.7em;
+  }
+  .moon-icon {
+    font-size: 0.7em;
+    margin: 0.5em;
+    color: turquoise;
+    display: unset;
+  }
+  
+  .moon-icon:hover  {
+    font-size: 0.7em;
+    margin: 0.5em;
+    width: 60px;
+    cursor: pointer;
+    color: #088578;
+    display: unset;
+  }
 }

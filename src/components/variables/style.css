@@ -8,6 +8,6 @@ html.dark, body.dark, main.dark, .is-three-quarter.dark {
   color: var(--primary-dark-text);
 }
 
-p.dark, span.dark, strong.dark, li.dark {
+p.dark, span.dark, strong.dark {
   color: var(--primary-dark-text);
 }

@@ -1,34 +1,30 @@
 <template>
-    <div>
-        <ThemeSwitch 
-            :checked="darkIsSet"
-            @update:checked="()=>updateChecked()"
-        />
-        <main  class="columns is-gapless is-multiline">
-            <div class="column is-one-quarter">
-                <DefaultSidebar/>
-            </div>
-            <div class="column is-three-quarter">
-                <DefaultForm
-                    :timer="chron.timer"
-                    :timeStamp="timeStamp"
-                    :taskValue="form.taskValue"
-                    :onInit="()=>init()"
+    <main  class="columns is-gapless is-multiline">
+        <div class="column is-one-quarter">
+            <DefaultSidebar
+                :isDark="darkIsSet"
+                @update:checked="()=>updateChecked()"
+            />
+        </div>
+        <div class="column is-three-quarter">
+            <DefaultForm
+                :timer="chron.timer"
+                :timeStamp="timeStamp"
+                :taskValue="form.taskValue"
+                :onInit="()=>init()"
+                :isDark="darkIsSet"
+                :onFinish="()=>finish()"
+                @onChangeTaskVal="newValue => form.taskValue = newValue"
+            />
+            <div class="wrapper">
+                <DefaultPanel
+                    title="Task History"
                     :isDark="darkIsSet"
-                    :onFinish="()=>finish()"
-                    @onChangeTaskVal="newValue => form.taskValue = newValue"
+                    :list="form.taskList"
                 />
-                <div class="wrapper">
-                    <DefaultPanel
-                        title="Task History"
-                        :isDark="darkIsSet"
-                        :list="form.taskList"
-                    />
-                </div>
-                {{ darkIsSet }}
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
 </template>
 
 <script lang='ts'>
@@ -36,7 +32,6 @@ import { defineComponent } from 'vue';
 import DefaultSidebar from '@/components/molecules/DefaultSidebar/DefaultSidebar.vue';
 import DefaultPanel from '@/components/organisms/DefaultPanel/DefaultPanel.vue';
 import DefaultForm from '@/components/organisms/DefaultForm/DefaultForm.vue';
-import ThemeSwitch from '@/components/atoms/ThemeSwitch/ThemeSwitch.vue';
 import ITask from "@/types/ITask";
 
 
@@ -46,8 +41,7 @@ export default defineComponent({
     components: {
         DefaultSidebar,
         DefaultForm,
-        DefaultPanel,
-        ThemeSwitch
+        DefaultPanel
     },
     data() {
         return {
@@ -87,6 +81,7 @@ export default defineComponent({
             const boxes =  document.querySelectorAll<HTMLElement>('.box');
             const inputs =  document.querySelectorAll<HTMLElement>('input');
             const buttons = document.querySelectorAll<HTMLElement>('.action-btn');
+            const dropdowns = document.querySelectorAll<HTMLElement>('.bars-dropdown');
             const elements = [
                 html,
                 body,
@@ -95,6 +90,7 @@ export default defineComponent({
                 boxes,
                 inputs,
                 buttons,
+                dropdowns,
             ]
             this.darkIsSet = !this.darkIsSet;
             elements.forEach(el => {

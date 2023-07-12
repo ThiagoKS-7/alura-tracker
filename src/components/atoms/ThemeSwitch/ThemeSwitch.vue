@@ -8,9 +8,17 @@
             :checked="checked"
             @input="(event) => $emit('update:checked', event.target.checked)"
         />
-        <label for="themeSwitch" class="theme-switch__label">
-            <span>Switch Theme</span>
+        <label v-if="!checked"  for="themeSwitch" class="sun-icon">
+            <span>
+                <i  class="fa-regular fa-sun "></i>
+            </span>
         </label>
+        <label v-if="checked"  for="themeSwitch" class="moon-icon" tabindex="-1">
+            <span>
+                <i   class="fa-sharp fa-regular fa-moon"></i>
+            </span>
+        </label>
+      
     </div>
 </template>
 
